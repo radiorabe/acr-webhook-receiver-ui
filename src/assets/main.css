@@ -1,0 +1,12 @@
+.rabe-title-font {
+  font-size: 2.25rem;
+  font-family: 'Fjalla One', sans-serif;
+  text-transform: uppercase;
+}
+
+.navigation-vogu {
+  background-image: url("/assets/vogu.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}

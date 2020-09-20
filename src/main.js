@@ -9,6 +9,8 @@ import Store from "@/store";
 
 import vuetify from "./plugins/vuetify";
 
+import '@/assets/main.css';
+
 Vue.config.productionTip = false;
 
 Vue.use(Vuex);
