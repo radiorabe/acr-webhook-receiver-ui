@@ -15,10 +15,8 @@
 <script>
 import { mapState } from "vuex";
 import { Duration } from "luxon";
-import { Doughnut } from "vue-chartjs";
 
 export default {
-  mixins: [Doughnut],
   computed: {
     ...mapState(["from", "to", "loading", "duration"]),
     timeRange: self => {
