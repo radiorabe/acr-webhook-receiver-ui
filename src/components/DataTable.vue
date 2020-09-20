@@ -44,7 +44,10 @@ Display a table of records from the main /results API
                 Raw Data
               </v-card-title>
               <v-card-text>
-                <pre>{{ item.result }}</pre>
+                <json-viewer
+                  :value="item.result"
+                  :expand-depth="3"
+                ></json-viewer>
               </v-card-text>
             </v-card>
           </v-dialog>
@@ -60,6 +63,7 @@ import { getResults } from "@/api/client.js";
 import { Duration } from "luxon";
 import AcrTime from "@/components/AcrTime";
 import MusicCard from "@/components/MusicCard";
+import JsonViewer from "vue-json-viewer";
 
 export default {
   data() {
@@ -75,7 +79,8 @@ export default {
   },
   components: {
     AcrTime,
-    MusicCard
+    MusicCard,
+    JsonViewer
   },
   computed: {
     ...mapState(["from", "to", "results", "duration", "loading"]),
