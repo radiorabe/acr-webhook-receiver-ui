@@ -1,6 +1,6 @@
 <template>
   <v-card flat :loading="loading" v-if="from">
-    <v-card-title>{{ from | luxon }} - {{ to | luxon }}</v-card-title>
+    <v-card-title class="rabe-datacard-title">{{ from | luxon }} - {{ to | luxon }}</v-card-title>
     <v-card-text>
       <b>Total:</b> {{ timeRange | readableDuration }} (100%)<br />
       <b>Playout:</b> {{ (duration * 1000) | readableDuration }} ({{

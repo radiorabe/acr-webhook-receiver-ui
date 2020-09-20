@@ -13,8 +13,11 @@
               The data in this API represents the raw data we receive from
               ACRCloud.<br />
               In day to day use the data is filtered and interpreted to fit
-              purposes like enriching our
-              <a href="https://archiv.rabe.ch">archival system</a> and
+              purposes like
+              <a href="https://github.com/radiorabe/raar_acr_tracks_importer"
+                >enriching</a
+              >
+              our <a href="https://archiv.rabe.ch">archival system</a> and
               <a href="https://github.com/radiorabe/suisa_sendemeldung/"
                 >collection society reporting</a
               >.

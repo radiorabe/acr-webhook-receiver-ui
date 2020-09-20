@@ -1,6 +1,11 @@
+.rabe-title-font,
+.rabe-datacard-title,
+.v-application .headline, .v-application .title {
+  font-family: 'Fjalla One', sans-serif !important;
+}
+
 .rabe-title-font {
   font-size: 2.25rem;
-  font-family: 'Fjalla One', sans-serif;
   text-transform: uppercase;
 }
 
