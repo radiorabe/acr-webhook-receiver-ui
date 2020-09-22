@@ -89,7 +89,6 @@ export default {
     },
     selectRangeForBroadcast(item) {
       this.$store.commit("updateRange", [item.started_at, item.finished_at]);
-      this.show = null;
     },
   },
 };
