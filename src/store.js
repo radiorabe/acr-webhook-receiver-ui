@@ -1,10 +1,22 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import axios from 'axios'
+import { jsonapiModule } from 'jsonapi-vuex'
 
 Vue.use(Vuex);
 
+const archiveAPI = axios.create({
+  baseURL: 'https://archiv.rabe.ch/api/',
+  headers: {
+    'Content-Type': 'application/vnd.api+json',
+  },
+})
+
 export default new Vuex.Store({
   strict: true,
+  modules: {
+    archive: jsonapiModule(archiveAPI),
+  },
   state: {
     from: null,
     to: null,
@@ -14,8 +26,8 @@ export default new Vuex.Store({
   },
   mutations: {
     updateRange: (state, range) => {
-      state.from = range[0]+ "T00:00:00";
-      state.to = range[1]+ "T23:59:59";
+      state.from = new Date(range[0]).toISOString();
+      state.to = new Date(range[1]).toISOString();
     },
     updateResults: (state, results) => {
       var sum = 0

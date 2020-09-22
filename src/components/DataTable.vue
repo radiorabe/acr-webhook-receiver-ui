@@ -11,8 +11,9 @@ Display a table of records from the main /results API
     </section>
     <section v-else class="pt-2">
       <v-data-table
+        dense
         hide-default-header
-        :loading="loading"
+        :footer-props="{showFirstLastPage: true, showCurrentPage: true}"
         :headers="headers"
         :items="results"
       >
@@ -21,9 +22,7 @@ Display a table of records from the main /results API
         </template>
         <template
           v-slot:[`item.result.data.metadata.played_duration`]="{ item }"
-        >
-          {{ item.result.data.metadata.played_duration }} seconds
-        </template>
+        >{{ item.result.data.metadata.played_duration }} seconds</template>
         <template v-slot:[`item.result.data.metadata.music`]="{ item }">
           <MusicCard :music="item.result.data.metadata.music" />
         </template>
@@ -35,19 +34,12 @@ Display a table of records from the main /results API
                 dark
                 v-bind="attrs"
                 v-on="on"
-              >
-                View Raw
-              </v-btn>
+              >View Raw</v-btn>
             </template>
             <v-card>
-              <v-card-title class="headline grey lighten-2">
-                Raw Data
-              </v-card-title>
+              <v-card-title class="headline grey lighten-2">Raw Data</v-card-title>
               <v-card-text>
-                <json-viewer
-                  :value="item.result"
-                  :expand-depth="3"
-                ></json-viewer>
+                <json-viewer :value="item.result" :expand-depth="3"></json-viewer>
               </v-card-text>
             </v-card>
           </v-dialog>
@@ -72,28 +64,28 @@ export default {
         { text: "Time", value: "result.data.metadata.timestamp_utc" },
         { text: "Duration", value: "result.data.metadata.played_duration" },
         { text: "Music", value: "result.data.metadata.music" },
-        { text: "Raw", value: "result.data" }
+        { text: "Raw", value: "result.data" },
       ],
-      errored: false
+      errored: false,
     };
   },
   components: {
     AcrTime,
     MusicCard,
-    JsonViewer
+    JsonViewer,
   },
   computed: {
     ...mapState(["from", "to", "results", "duration", "loading"]),
-    timeRange: o => {
+    timeRange: (o) => {
       return new Date(o.to) - new Date(o.from);
-    }
+    },
   },
   methods: {
     loadData: (self, from, to) => {
       self.$store.commit("setLoading", true);
       let opts = {
         limit: 50000,
-        from: from
+        from: from,
       };
       if (!from) {
         opts.from = new Date().toISOString();
@@ -103,22 +95,22 @@ export default {
       }
 
       getResults(opts)
-        .then(response => self.$store.commit("updateResults", response.data))
+        .then((response) => self.$store.commit("updateResults", response.data))
         .catch(() => {
           self.errored = true;
         })
         .finally(() => self.$store.commit("setLoading", false));
-    }
+    },
   },
   filters: {
-    readableDuration: value => {
+    readableDuration: (value) => {
       return Duration.fromMillis(value)
         .toFormat("d-h_m,s.")
         .replace("-", " days ")
         .replace("_", " hours ")
         .replace(",", " minutes ")
         .replace(".", " seconds");
-    }
+    },
   },
   created() {
     this.unsubscribe = this.$store.subscribe((mutation, state) => {
@@ -132,7 +124,7 @@ export default {
   },
   mounted() {
     this.loadData(this, this.$store.state.from, this.$store.state.to);
-  }
+  },
 };
 </script>
 

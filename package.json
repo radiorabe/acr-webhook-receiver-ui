@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "axios": "^0.20.0",
+    "jsonapi-vuex": "^4.4.0",
+    "luxon": "^1.25.0",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
     "vue": "^2.6.10",
