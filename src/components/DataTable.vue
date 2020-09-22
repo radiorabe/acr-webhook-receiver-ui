@@ -67,6 +67,7 @@ export default {
         { text: "Raw", value: "result.data" },
       ],
       errored: false,
+      dialog: null,
     };
   },
   components: {

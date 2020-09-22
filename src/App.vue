@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar flat dark :color="$vuetify.theme.themes.light.primary" app>
-      <v-toolbar-title class="rabe-title-font">ACRCloud Data Explorer</v-toolbar-title>
+      <v-toolbar-title class="rabe-title-font">RaBe ACRCloud data explorer</v-toolbar-title>
     </v-app-bar>
     <v-container fluid class="pa-0">
       <v-row no-gutters dense class="pt-0" cols="12">
