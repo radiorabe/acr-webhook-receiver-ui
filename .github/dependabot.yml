@@ -10,6 +10,7 @@ updates:
     commit-message:
       prefix: "feat(deps): "
       prefix-development: "chore(deps): "
+    open-pull-requests-limit: 20
 
   # Update Dockerfile
   - package-ecosystem: "docker"
@@ -26,3 +27,4 @@ updates:
       interval: "daily"
     commit-message:
       prefix: "chore(ci): "
+    open-pull-requests-limit: 10
