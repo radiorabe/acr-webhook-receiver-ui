@@ -31,7 +31,7 @@
     "swagger-vue": "^1.0.3",
     "vue-cli-plugin-vuetify": "^2.0.7",
     "vue-template-compiler": "^2.6.10",
-    "vuetify-loader": "^1.6.0"
+    "vuetify-loader": "^1.7.2"
   },
   "eslintConfig": {
     "root": true,
