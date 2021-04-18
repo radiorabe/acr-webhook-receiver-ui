@@ -25,4 +25,4 @@ updates:
     schedule:
       interval: "daily"
     commit-message:
-      prefix: "chore(actions): "
+      prefix: "chore(ci): "
