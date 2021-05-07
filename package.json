@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "axios": "0.21.1",
-    "core-js": "3.11.2",
+    "core-js": "3.12.0",
     "jsonapi-vuex": "4.5.2",
     "luxon": "1.26.0",
     "vue": "2.6.12",
