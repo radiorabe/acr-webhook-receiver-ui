@@ -11,7 +11,7 @@
     "axios": "0.21.1",
     "core-js": "3.16.0",
     "jsonapi-vuex": "4.5.3",
-    "luxon": "1.27.0",
+    "luxon": "2.0.1",
     "vue": "2.6.14",
     "vue-json-viewer": "2.2.19",
     "vue-luxon": "0.10.0",
