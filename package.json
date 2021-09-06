@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "axios": "0.21.1",
+    "axios": "0.21.4",
     "core-js": "3.16.0",
     "jsonapi-vuex": "4.5.3",
     "luxon": "1.27.0",
