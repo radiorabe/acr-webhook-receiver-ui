@@ -15,7 +15,7 @@
     "vue": "2.6.14",
     "vue-json-viewer": "2.2.20",
     "vue-luxon": "0.10.0",
-    "vuetify": "2.6.3",
+    "vuetify": "2.6.10",
     "vuex": "3.6.2"
   },
   "devDependencies": {
